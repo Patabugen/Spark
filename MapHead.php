@@ -63,11 +63,6 @@ function file_chop($file_path, $chunk_size){
 	// End of Settings Reading
 	$description = '';
 	
-	if($id == ""){
-		$name = strtolower($_FILES['mapfile']['name']);
-		$name = substr($name,0, strlen($name) - 4);
-	}else{
-		$name = strtolower(mysql_result(mysql_query("SELECT name FROM maps WHERE id='$id'"),0,'name'));
-	}
-
+	$name = strtolower($_FILES['mapfile']['name']);
+	$name = substr($name,0, strlen($name) - 4);
 	$name = addslashes($name);
